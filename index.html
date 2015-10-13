@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Game of Life</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="text/javascript" src = "js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src = "js/main.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+	<body>
+		<div class="title">Game of Life</div>
+		<div id = "contain">
+			<canvas id="canvas" width="1000" height="600">
+				Canvas not supported
+			</canvas>
+		</div>
+		<button class="myButton" id="start">开始设置</button>
+		<button class="myButton" id="continue">进行模拟</button>
+		<button class="myButton" id="pause">暂停</button>
+		<div id="input_size">输入画布宽度：<input id="canvas_width"/> 高度：<input id="canvas_height"/><button id="ready_len">确认</button></div>
+		<div id="input_size">输入地图刷新帧率：<input id="frequence"/>fps <button id="ready_fre">确认</button></div>
+		<div id="input_size">输入生成细胞密度：<input id="density"/> <button id="ready_den">确认</button></div>
+		<div id='current_size'>当前画布宽度:1000,高度:600;刷新帧率:10fps;生成细胞密度:0.67</div>
+	</body>
+</html>
