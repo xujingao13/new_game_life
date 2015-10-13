@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for test_coverage_byShell/main.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../prettify.css">
+    <link rel="stylesheet" href="../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">test_coverage_byShell/main.js</span></h1>
+    <h2>
+        Statements: <span class="metric">100% <small>(27 / 27)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">100% <small>(10 / 10)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">100% <small>(3 / 3)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">100% <small>(27 / 27)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../index.html">All files</a> &#187; <a href="index.html">test_coverage_byShell/</a> &#187; main.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-yes">1000</span>
+<span class="cline-any cline-yes">100000</span>
+<span class="cline-any cline-yes">100000</span>
+<span class="cline-any cline-yes">100000</span>
+<span class="cline-any cline-yes">54932</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">45068</span>
+<span class="cline-any cline-yes">100000</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">32</span>
+<span class="cline-any cline-yes">30</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">32</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">30</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">30</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">30</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">26</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span></td><td class="text"><pre class="prettyprint lang-js">//初始化细胞
+function Initialize_cell(){
+	for(var i = 2; i &lt; row_number + 2; i++){
+		for(var j = 2; j &lt; col_number + 2; j++){
+			var temp = Math.floor(1000 * density);
+			var ran = Math.floor(Math.random() * 1000);
+			if(ran &lt; temp &amp;&amp; is_wall[i][j] === 0)
+				is_live[i][j] = 1;
+			else
+				is_live[i][j] = 0;
+			is_liveBuffer[i][j] = is_live[i][j];
+		}
+	}
+&nbsp;
+}
+//更新画布
+function Update(){
+	for(var i = 2; i &lt; row_number + 2; i++){
+		for(var j = 2; j &lt; col_number + 2; j++){
+			if(is_wall[i][j] == 0){
+				changeState(i, j);
+			}
+		}
+	}
+&nbsp;
+	for(var i = 2; i &lt; row_number + 2; i++){
+		for(var j = 2; j &lt; col_number + 2; j++){
+			is_live[i][j] = is_liveBuffer[i][j];
+		}
+	}
+}
+&nbsp;
+//判断是否改变状态
+function changeState(i, j){
+	var lived_cell = 0;
+&nbsp;
+	lived_cell = is_live[i][j-2]+is_live[i][j-1]+is_live[i][j+1]
+				+is_live[i][j+2]+is_live[i-2][j]+is_live[i-1][j]+
+				is_live[i+1][j]+is_live[i+2][j];
+&nbsp;
+	if(lived_cell === 3){
+		is_liveBuffer[i][j] = 1;
+	}
+	else if(lived_cell === 2){
+		return;
+	}
+	else{
+		is_liveBuffer[i][j] = 0;
+	}
+&nbsp;
+}
+module.exports.Initialize_cell = Initialize_cell;
+module.exports.Update = Update;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Oct 09 2015 20:05:06 GMT+0800 (CST)</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
